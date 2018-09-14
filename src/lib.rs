@@ -14,6 +14,14 @@ pub struct IoError {
     description: String,
 }
 
+impl IoError {
+    pub fn kind(&self) -> IoErrKind { self.kind }
+
+    pub fn description(&self) -> &str { &self.description }
+
+    pub fn into_description(self) -> String { self.description }
+}
+
 impl From<io::Error> for IoError {
     fn from(err: io::Error) -> IoError {
         IoError {
