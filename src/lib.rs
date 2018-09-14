@@ -23,6 +23,12 @@ impl From<io::Error> for IoError {
     }
 }
 
+impl fmt::Display for IoError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}: {}", self.kind, self.description)
+    }
+}
+
 
 /// A copy of `io::ErrorKind` that can be properly de/serialized.
 /// It's possible to convert between io::ErrorKind and `IoErrKind`
