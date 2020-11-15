@@ -1,7 +1,6 @@
 /// A crate that makes many of the I/O errors in stdlib de/serializable.
 
-extern crate serde;
-#[macro_use] extern crate serde_derive;
+use serde::{Deserialize, Serialize};
 
 use std::fmt;
 use std::io;
