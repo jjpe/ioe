@@ -3,7 +3,6 @@
 extern crate serde;
 #[macro_use] extern crate serde_derive;
 
-use std::error::Error;
 use std::fmt;
 use std::io;
 
@@ -26,7 +25,7 @@ impl From<io::Error> for IoError {
     fn from(err: io::Error) -> IoError {
         IoError {
             kind: IoErrKind::from(err.kind()),
-            description: String::from(err.description()),
+            description: String::from(err.to_string()),
         }
     }
 }
