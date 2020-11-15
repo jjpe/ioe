@@ -30,6 +30,12 @@ impl From<io::Error> for IoError {
     }
 }
 
+impl From<IoError> for io::Error {
+    fn from(err: IoError) -> io::Error {
+        io::Error::new(err.kind.into(), err.description)
+    }
+}
+
 impl fmt::Display for IoError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}: {}", self.kind, self.description)
