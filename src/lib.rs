@@ -6,7 +6,7 @@ use serde_derive::{Deserialize, Serialize};
 use std::fmt;
 use std::io;
 
-#[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Delta)]
+#[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Delta, Hash)]
 #[derive(Serialize, Deserialize)]
 pub struct IoError {
     kind: IoErrKind,
@@ -46,7 +46,7 @@ impl fmt::Display for IoError {
 /// A copy of `io::ErrorKind` that can be properly de/serialized.
 /// It's possible to convert between io::ErrorKind and `IoErrKind`
 /// by using the From trait.
-#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Delta)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Delta, Hash)]
 #[derive(Serialize, Deserialize)]
 pub enum IoErrKind {
     NotFound,
