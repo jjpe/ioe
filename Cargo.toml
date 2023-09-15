@@ -3,7 +3,7 @@ name = "ioe"
 version = "0.5.2"
 authors = ["Joey Ezechiels <joey.ezechiels@gmail.com>"]
 description = "A crate that makes many of the I/O errors in stdlib de/serializable."
-edition = "2018"
+edition = "2021"
 license = "MIT"
 
 [dependencies]
