@@ -6,6 +6,7 @@ description = "A crate that makes many of the I/O errors in stdlib de/serializab
 edition = "2021"
 license = "MIT"
 rust-version = "1.72.0"
+repository = "https://github.com/jjpe/ioe"
 
 [dependencies]
 serde = { version = "1.0.188", features = ["derive"] }
