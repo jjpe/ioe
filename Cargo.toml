@@ -5,6 +5,7 @@ authors = ["Joey Ezechiels <joey.ezechiels@gmail.com>"]
 description = "A crate that makes many of the I/O errors in stdlib de/serializable."
 edition = "2021"
 license = "MIT"
+rust-version = "1.72.0"
 
 [dependencies]
 serde = { version = "1.0.188", features = ["derive"] }
