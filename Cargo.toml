@@ -1,6 +1,6 @@
 [package]
 name = "ioe"
-version = "0.5.2"
+version = "0.6.0"
 authors = ["Joey Ezechiels <joey.ezechiels@gmail.com>"]
 description = "A crate that makes many of the I/O errors in stdlib de/serializable."
 edition = "2021"
