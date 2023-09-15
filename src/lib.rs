@@ -1,13 +1,12 @@
 /// A crate that makes many of the I/O errors in stdlib de/serializable.
 
-use deltoid_derive::Delta;
 use serde_derive::{Deserialize, Serialize};
 
 use std::fmt;
 use std::io;
 
-#[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Delta, Hash)]
 #[derive(Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct IoError {
     kind: IoErrKind,
     description: String,
@@ -46,8 +45,8 @@ impl fmt::Display for IoError {
 /// A copy of `io::ErrorKind` that can be properly de/serialized.
 /// It's possible to convert between io::ErrorKind and `IoErrKind`
 /// by using the From trait.
-#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Delta, Hash)]
 #[derive(Serialize, Deserialize)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum IoErrKind {
     NotFound,
     PermissionDenied,
